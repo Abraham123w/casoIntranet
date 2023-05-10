@@ -52,17 +52,26 @@ public class VentanaBienvenida extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnRegistroCarrera) {
             // Acción del botón "Registro Carrera"
-            System.out.println("Se presionó el botón 'Registro Carrera'");
+
+            VentanaRegistroCarrera ventanaRegistroCarrera = new VentanaRegistroCarrera();
+            //Cierra la ventana actual
+            this.dispose();
         } else if (e.getSource() == btnRegistroEstudiante) {
             // Acción del botón "Registro Estudiante"
-            System.out.println("Se presionó el botón 'Registro Estudiante'");
+
+            VentanaRegistroEstudiante ventanaRegistroEstudiante = new VentanaRegistroEstudiante();
+            ventanaRegistroEstudiante.mostrar();
+            this.dispose();
+
         } else if (e.getSource() == btnBusquedaEstudiante) {
             // Acción del botón "Búsqueda Estudiante"
-            System.out.println("Se presionó el botón 'Búsqueda Estudiante'");
+            VentanaBusquedaEstudiante ventanaBusquedaEstudiante = new VentanaBusquedaEstudiante();
+
+            this.dispose();
         } else if (e.getSource() == btnSalir) {
             // Acción del botón "Salir"
-            System.out.println("Se presionó el botón 'Salir'");
-            dispose();
+            this.dispose();
+            System.exit(0);
         }
     }
 

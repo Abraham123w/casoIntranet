@@ -2,7 +2,7 @@ package Model;
 
 import java.util.ArrayList;
 
-class Carrera {
+public class Carrera {
     private String nombre;
     private String codigo;
     private int semestres;
@@ -39,6 +39,34 @@ class Carrera {
 
     public ArrayList<Estudiante> getEstudiantes() {
         return estudiantes;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public int getSemestres() {
+        return semestres;
+    }
+
+    public void setSemestres(int semestres) {
+        this.semestres = semestres;
+    }
+
+    public void setEstudiantes(ArrayList<Estudiante> estudiantes) {
+        this.estudiantes = estudiantes;
     }
 }
 

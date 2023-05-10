@@ -1,19 +1,27 @@
-package Model.data;
+package data;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+//package Model.data;
+
+
 
 public final class DBConnector {
-    private static final String URL = "jdbc:mysql://localhost:3306/";
+   private static final String URL = "jdbc:mysql://localhost:3306/";
     private static final DBConnector INSTANCE = new DBConnector();
     private static Connection connection = null;
+
+    private DBConnector() {
+    }
+
     public static DBConnector getInstance() {
         return INSTANCE;
     }
-    // Realiza la conexion para MySQL sin una base de datos en especifico
+
     public static Connection connection(String username, String password) throws ClassNotFoundException {
         try {
+            Class.forName("com.mysql.jdbc.Driver");
             if (connection == null || connection.isClosed()) {
                 connection = doConnection("",username, password);
             }
@@ -21,9 +29,9 @@ public final class DBConnector {
             System.err.println("Error al comprobar si está cerrada la conexión: "+ e);
             throw new RuntimeException(e);
         }
+
         return connection;
     }
-    // Realiza la conexion para una base de datos SQL especifico
     public static Connection connection(String db,String username, String password) {
         try {
             if (connection == null || connection.isClosed()) {
@@ -33,9 +41,10 @@ public final class DBConnector {
             System.err.println("Error al comprobar si está cerrada la conexión: "+ e);
             throw new RuntimeException(e);
         }
+
         return connection;
     }
-    // Cierra el nodo de conexion
+
     public static void closeConnection() {
         try {
             connection.close();
@@ -44,6 +53,7 @@ public final class DBConnector {
             System.err.println("Error al cerrar la conexión: "+ e);
         }
     }
+
     private static Connection doConnection(String db,String username, String password) throws ClassNotFoundException {
         Connection conn;
         try {
@@ -59,4 +69,5 @@ public final class DBConnector {
         System.out.println("Conexion creada : "+conn);
         return conn;
     }
+
 }

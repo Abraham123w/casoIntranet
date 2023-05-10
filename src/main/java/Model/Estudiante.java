@@ -1,15 +1,26 @@
 package Model;
-class Estudiante {
+public class Estudiante {
 	private String nombre;
-	private String apellido;
+	//private String apellido;
 	private String rut;
 	private String numMatricula;
+	private Carrera carrera;
 
-	public Estudiante(String nombre, String apellido, String rut, String numMatricula) {
+	public Estudiante(String nombre, String rut, String numMatricula, Carrera carrera) {
+		//rut,nombre,matricula,carrera
 		this.nombre = nombre;
-		this.apellido = apellido;
+	//	this.apellido = apellido;
 		this.rut = rut;
 		this.numMatricula = numMatricula;
+		this.carrera = carrera;
+	}
+
+	public Carrera getCarrera() {
+		return carrera;
+	}
+
+	public void setCarrera(Carrera carrera) {
+		this.carrera = carrera;
 	}
 
 	public String getNombre() {
@@ -20,13 +31,13 @@ class Estudiante {
 		this.nombre = nombre;
 	}
 
-	public String getApellido() {
+	/*public String getApellido() {
 		return apellido;
-	}
+	}*/
 
-	public void setApellido(String apellido) {
+	/*public void setApellido(String apellido) {
 		this.apellido = apellido;
-	}
+	}*/
 
 	public String getRut() {
 		return rut;

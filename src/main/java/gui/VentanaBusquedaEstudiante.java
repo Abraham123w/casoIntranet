@@ -56,8 +56,8 @@ public class VentanaBusquedaEstudiante extends JFrame implements ActionListener 
             System.out.println("Se buscó al estudiante " + nombreEstudiante + " de la carrera " + carreraSeleccionada);
         } else if (e.getSource() == btnRegresar) {
             // Acción del botón "Regresar"
-            System.out.println("Se presionó el botón 'Regresar'");
-            dispose();
+            VentanaBienvenida ventanaBienvenida = new VentanaBienvenida();
+            this.dispose();
         }
     }
     public static void main(String[] args) {

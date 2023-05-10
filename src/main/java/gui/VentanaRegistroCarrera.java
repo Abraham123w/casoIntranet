@@ -64,8 +64,8 @@ public class VentanaRegistroCarrera extends JFrame implements ActionListener {
                     " y " + cantidadSemestres + " semestres.");
         } else if (e.getSource() == btnCancelar) {
             // Acción del botón "Cancelar"
-            System.out.println("Se presionó el botón 'Cancelar'");
-            dispose();
+            VentanaBienvenida ventanaBienvenida = new VentanaBienvenida();
+            this.dispose();
         }
     }
     public static void main(String[] args) {
